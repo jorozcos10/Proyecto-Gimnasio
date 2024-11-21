@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OLIMPO", "OLIMPO\OLIMPO.csproj", "{CDB0910E-C21D-409D-B246-9551CD57285A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDB0910E-C21D-409D-B246-9551CD57285A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDB0910E-C21D-409D-B246-9551CD57285A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDB0910E-C21D-409D-B246-9551CD57285A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDB0910E-C21D-409D-B246-9551CD57285A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BCC9CC76-B2B8-47D2-A053-5465B826854B}
+	EndGlobalSection
+EndGlobal
