@@ -3,8 +3,9 @@ using System.IO;
 
 namespace OLIMPO.Modelo
 {
-    public class ModeloUsuarios
+    public class ModeloClientes
     {
+        public int id { get; set; }
         public string Nombre { get; set; }
         public string CorreoElectronico { get; set; }
         public string Cedula { get; set; }
@@ -23,7 +24,7 @@ namespace OLIMPO.Modelo
             return Path.Combine(carpetaDatos, "usuarios.csv");
         }
 
-        public void CrearArchivoSiNoExiste()
+        /*public void CrearArchivoSiNoExiste()
         {
             try
             {
@@ -48,9 +49,9 @@ namespace OLIMPO.Modelo
                 // Es recomendable loguear el error o mostrar un mensaje de error
                 Console.WriteLine("Error al crear el archivo: " + ex.Message);
             }
-        }
+        }*/
 
-        public bool IniciarSesion()
+        public String[] IniciarSesion()
         {
             try
             {
@@ -61,20 +62,23 @@ namespace OLIMPO.Modelo
                 {
                     using (var reader = new StreamReader(rutaArchivo))
                     {
+                        reader.ReadLine();
                         string line;
                         while ((line = reader.ReadLine()) != null)
                         {
+                           
                             var campos = line.Split(',');
 
                             // Validar si la cantidad de campos es correcta
-                            if (campos.Length == 4)
-                            {
-                                string correoCSV = campos[1].Trim();
-                                string contraseñaCSV = campos[3].Trim();
+                           // if (campos.Length == 4)
+                            //{
+                                string correoCSV = campos[2].Trim();
+                                string contraseñaCSV = campos[4].Trim();
+                           // Console.WriteLine(correoCSV + " " + contraseñaCSV);
 
                                 if (CorreoElectronico == correoCSV && Contraseña == contraseñaCSV)
-                                    return true;
-                            }
+                                    return campos;
+                           // }
                         }
                     }
                 }
@@ -85,7 +89,7 @@ namespace OLIMPO.Modelo
                 Console.WriteLine("Error al iniciar sesión: " + ex.Message);
             }
 
-            return false;
+            return null;
         }
     }
 }

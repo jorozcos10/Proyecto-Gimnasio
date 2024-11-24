@@ -46,8 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\ControladorClase.cs" />
     <Compile Include="Controlador\ControladorEntrenador.cs" />
-    <Compile Include="Controlador\ControladorUsuarios.cs" />
+    <Compile Include="Controlador\ControladorReserva.cs" />
+    <Compile Include="Controlador\ControladorClientes.cs" />
+    <Compile Include="Controlador\ControladorHorario.cs" />
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,12 +82,24 @@
       <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FileHelper.cs" />
+    <Compile Include="Modelo\Equipos.cs" />
+    <Compile Include="Modelo\ModeloClase.cs" />
+    <Compile Include="Modelo\ModeloHorario.cs" />
+    <Compile Include="Modelo\ModeloMatricula.cs" />
+    <Compile Include="Modelo\ModeloMembresia.cs" />
     <Compile Include="Modelo\ModeloEntrenador.cs" />
-    <Compile Include="Modelo\ModeloUsuarios.cs" />
+    <Compile Include="Modelo\ModeloReserva.cs" />
+    <Compile Include="Modelo\ModeloClientes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipalEntrenador.resx">
+      <DependentUpon>frmPrincipalEntrenador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipalUsuario.resx">
+      <DependentUpon>frmPrincipalUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarEntrenador.resx">
       <DependentUpon>frmRegistrarEntrenador.cs</DependentUpon>

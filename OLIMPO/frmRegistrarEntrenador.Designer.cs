@@ -41,13 +41,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtHorarios = new System.Windows.Forms.TextBox();
-            this.txtPuntosFuertes = new System.Windows.Forms.TextBox();
+            this.cmbPf = new System.Windows.Forms.ComboBox();
+            this.cmbHorario = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(201, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(201, 470);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 21;
@@ -57,7 +60,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(53, 330);
+            this.btnRegistrar.Location = new System.Drawing.Point(42, 470);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 20;
@@ -142,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(50, 293);
+            this.label6.Location = new System.Drawing.Point(53, 271);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 22;
@@ -151,33 +154,55 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(53, 243);
+            this.label7.Location = new System.Drawing.Point(36, 242);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 13);
             this.label7.TabIndex = 23;
             this.label7.Text = "Puntos Fuertes:";
             // 
-            // txtHorarios
+            // cmbPf
             // 
-            this.txtHorarios.Location = new System.Drawing.Point(129, 290);
-            this.txtHorarios.Name = "txtHorarios";
-            this.txtHorarios.Size = new System.Drawing.Size(147, 20);
-            this.txtHorarios.TabIndex = 24;
+            this.cmbPf.FormattingEnabled = true;
+            this.cmbPf.Location = new System.Drawing.Point(129, 239);
+            this.cmbPf.Name = "cmbPf";
+            this.cmbPf.Size = new System.Drawing.Size(147, 21);
+            this.cmbPf.TabIndex = 24;
             // 
-            // txtPuntosFuertes
+            // cmbHorario
             // 
-            this.txtPuntosFuertes.Location = new System.Drawing.Point(129, 240);
-            this.txtPuntosFuertes.Name = "txtPuntosFuertes";
-            this.txtPuntosFuertes.Size = new System.Drawing.Size(147, 20);
-            this.txtPuntosFuertes.TabIndex = 25;
+            this.cmbHorario.FormattingEnabled = true;
+            this.cmbHorario.Location = new System.Drawing.Point(129, 268);
+            this.cmbHorario.Name = "cmbHorario";
+            this.cmbHorario.Size = new System.Drawing.Size(147, 21);
+            this.cmbHorario.TabIndex = 25;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(39, 309);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(260, 150);
+            this.dataGridView1.TabIndex = 26;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(283, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 23);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmRegistrarEntrenador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 365);
-            this.Controls.Add(this.txtPuntosFuertes);
-            this.Controls.Add(this.txtHorarios);
+            this.ClientSize = new System.Drawing.Size(368, 511);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cmbHorario);
+            this.Controls.Add(this.cmbPf);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancelar);
@@ -193,6 +218,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmRegistrarEntrenador";
             this.Text = "frmRegistrarEntrenador";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,7 +239,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtHorarios;
-        private System.Windows.Forms.TextBox txtPuntosFuertes;
+        private System.Windows.Forms.ComboBox cmbPf;
+        private System.Windows.Forms.ComboBox cmbHorario;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }

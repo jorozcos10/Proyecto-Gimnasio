@@ -7,12 +7,12 @@ namespace OLIMPO
 {
     public partial class frmRegistrarUsuario : Form
     {
-        private ControladorUsuarios controlador;
+        private ControladorClientes controlador;
 
         public frmRegistrarUsuario()
         {
             InitializeComponent();
-            controlador = new ControladorUsuarios(); // Inicializa el controlador
+            controlador = new ControladorClientes(); // Inicializa el controlador
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -20,7 +20,7 @@ namespace OLIMPO
             try
             {
                 // Capturar los datos ingresados en el formulario
-                ModeloUsuarios modelo = new ModeloUsuarios
+                ModeloClientes modelo = new ModeloClientes
                 {
                     Nombre = txtNombre.Text.Trim(),
                     CorreoElectronico = txtCorreoElectronico.Text.Trim(),

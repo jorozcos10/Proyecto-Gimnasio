@@ -7,7 +7,7 @@ namespace OLIMPO
     public partial class frmLogin : Form
     {
         // Declara las variables dentro de la clase
-        ModeloUsuarios modeloUsuarios = new ModeloUsuarios();
+        ModeloClientes modeloUsuarios = new ModeloClientes();
         ModeloEntrenador modeloEntrenador = new ModeloEntrenador();
 
         public frmLogin()
@@ -15,8 +15,8 @@ namespace OLIMPO
             InitializeComponent();
 
             // Llamamos al método CrearArchivoSiNoExiste para ambos modelos
-            modeloUsuarios.CrearArchivoSiNoExiste();
-            modeloEntrenador.CrearArchivoSiNoExiste();
+           // modeloUsuarios.CrearArchivoSiNoExiste();
+          //  modeloEntrenador.CrearArchivoSiNoExiste();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -42,10 +42,10 @@ namespace OLIMPO
             {
                 modeloUsuarios.CorreoElectronico = txtCorreoElectronico.Text;
                 modeloUsuarios.Contraseña = txtContraseña.Text;
-
-                if (modeloUsuarios.IniciarSesion())
+                String[] campos = modeloUsuarios.IniciarSesion();
+                if (campos[0]!="")
                 {
-                    frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario();
+                    frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario(campos[0], campos[1]);
                     fPrincipalUsuario.ShowDialog();
                 }
                 else
@@ -57,10 +57,10 @@ namespace OLIMPO
             {
                 modeloEntrenador.CorreoElectronico = txtCorreoElectronico.Text;
                 modeloEntrenador.Contraseña = txtContraseña.Text;
-
-                if (modeloEntrenador.IniciarSesion())
+                string idu = modeloEntrenador.IniciarSesion();
+                if (idu!="")
                 {
-                    frmPrincipalEntrenador fPrincipalEntrenador = new frmPrincipalEntrenador();
+                    frmPrincipalEntrenador fPrincipalEntrenador = new frmPrincipalEntrenador(idu);
                     fPrincipalEntrenador.ShowDialog();
                 }
                 else
