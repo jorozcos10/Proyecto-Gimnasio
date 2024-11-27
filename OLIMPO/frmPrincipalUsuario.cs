@@ -18,9 +18,37 @@ namespace OLIMPO
         string idu = "";
         string nombre= "";
         ControladorReserva cr;
-        public frmPrincipalUsuario(String idu, string nombre)
+        public frmPrincipalUsuario(String idu, string nombre,string fechav)
         {
             //  tabControl.TabPages["tabPage1"].Text = "Nueva Reserva";
+            DateTime fecha;
+            // Fecha actual
+            DateTime fechaActual = DateTime.Now;
+            if (DateTime.TryParse(fechav, out fecha))
+            {
+                // Obtenemos la fecha de vencimiento (1 mes después de la fecha de registro)
+                DateTime fechaVencimiento = fecha.AddMonths(1);
+
+                // Calcular la diferencia entre la fecha de vencimiento y la fecha actual
+                TimeSpan diferencia = fechaVencimiento - fechaActual;
+
+                // Verificar si la diferencia es menor o igual a 5 días (y que aún no haya pasado la fecha de vencimiento)
+                if (diferencia.Days <= 5 && diferencia.Days >= 0)
+                {
+                    // Notificación urgente para el cliente (5 días antes de la fecha de vencimiento)
+                    MessageBox.Show(
+                  $"Notificación urgente para {nombre}: Su mensualidad vence en {diferencia.Days} días, el {fechaVencimiento.ToString("yyyy-MM-dd")}.",
+                  "Aviso de vencimiento",
+                  MessageBoxButtons.OK,
+                  MessageBoxIcon.Warning
+              );
+                }
+            }
+            else
+            {
+                Console.WriteLine("error al convertir");
+            }
+
             this.idu = idu;
             this.nombre = nombre;
             InitializeComponent();

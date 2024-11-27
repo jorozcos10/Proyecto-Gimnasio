@@ -7,7 +7,7 @@ namespace OLIMPO
     public partial class frmLogin : Form
     {
         // Declara las variables dentro de la clase
-        ModeloClientes modeloUsuarios = new ModeloClientes();
+        ModeloUsuarios modeloUsuarios = new ModeloUsuarios();
         ModeloEntrenador modeloEntrenador = new ModeloEntrenador();
 
         public frmLogin()
@@ -45,7 +45,7 @@ namespace OLIMPO
                 String[] campos = modeloUsuarios.IniciarSesion();
                 if (campos[0]!="")
                 {
-                    frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario(campos[0], campos[1]);
+                    frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario(campos[0], campos[1], campos[5]);
                     fPrincipalUsuario.ShowDialog();
                 }
                 else

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OLIMPO.Helpers;
+using System;
 using System.IO;
 
 namespace OLIMPO.Modelo
@@ -17,19 +18,12 @@ namespace OLIMPO.Modelo
         // Método privado para obtener la ruta del archivo 'entrenadores.csv'
         private string ObtenerRutaArchivo()
         {
-            // Ruta absoluta para la carpeta Datos
-            string carpetaDatos = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos");
-
-            // Crear la carpeta Datos si no existe
-            if (!Directory.Exists(carpetaDatos))
-                Directory.CreateDirectory(carpetaDatos);
-
-            // Retornar la ruta completa del archivo 'entrenadores.csv'
-            return Path.Combine(carpetaDatos, "entrenadores.csv");
+            string archivo = FileHelper.GetFilePath("entrenadores.csv");
+            return archivo;
         }
 
-        // Método para crear el archivo 'entrenadores.csv' si no existe
-        public void CrearArchivoSiNoExiste()
+            // Método para crear el archivo 'entrenadores.csv' si no existe
+            public void CrearArchivoSiNoExiste()
         {
             try
             {
@@ -70,7 +64,7 @@ namespace OLIMPO.Modelo
                             var campos = line.Split(',');
                             string correoCSV = campos[2].Trim();
                             string contraseñaCSV = campos[4].Trim();
-
+                            Console.WriteLine(line);
                             // Verifica si las credenciales coinciden
                             if (CorreoElectronico == correoCSV && Contraseña == contraseñaCSV)
                                 return campos[0];

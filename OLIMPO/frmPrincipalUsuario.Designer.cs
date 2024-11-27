@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbClase = new System.Windows.Forms.ComboBox();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
@@ -38,9 +37,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cmbEntrenador = new System.Windows.Forms.ComboBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -53,23 +53,6 @@
             this.tabControl.Size = new System.Drawing.Size(653, 353);
             this.tabControl.TabIndex = 0;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.cmbEntrenador);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.cmbHorario);
-            this.tabPage1.Controls.Add(this.cmbClase);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(645, 327);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Reserva";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -77,7 +60,6 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(645, 327);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // cmbClase
@@ -103,18 +85,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Clase";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(196, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Horario";
             // 
             // button1
             // 
@@ -144,6 +124,23 @@
             this.cmbEntrenador.TabIndex = 6;
             this.cmbEntrenador.SelectedIndexChanged += new System.EventHandler(this.cmbEntrenador_SelectedIndexChanged);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.cmbEntrenador);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.cmbHorario);
+            this.tabPage1.Controls.Add(this.cmbClase);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(645, 327);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Reserva";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // frmPrincipalUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,9 +151,9 @@
             this.Text = "frmPrincipalUsuario";
             this.Load += new System.EventHandler(this.frmPrincipalUsuario_Load);
             this.tabControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,13 +162,13 @@
 
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox cmbEntrenador;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.ComboBox cmbClase;
-        private System.Windows.Forms.ComboBox cmbEntrenador;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

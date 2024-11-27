@@ -7,25 +7,29 @@ namespace OLIMPO
 {
     public partial class frmRegistrarUsuario : Form
     {
-        private ControladorClientes controlador;
+        private ControladorUsuarios controlador;
 
         public frmRegistrarUsuario()
         {
             InitializeComponent();
-            controlador = new ControladorClientes(); // Inicializa el controlador
+            controlador = new ControladorUsuarios(); // Inicializa el controlador
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                DateTime fechaActual = DateTime.Now.Date;
+                string fechaFormateada = fechaActual.ToString("yyyy-MM-dd"); // Formato de fecha sin hora
                 // Capturar los datos ingresados en el formulario
-                ModeloClientes modelo = new ModeloClientes
+                ModeloUsuarios modelo = new ModeloUsuarios
                 {
                     Nombre = txtNombre.Text.Trim(),
                     CorreoElectronico = txtCorreoElectronico.Text.Trim(),
                     Cedula = txtCedula.Text.Trim(),
-                    Contraseña = txtContraseña.Text.Trim()
+                    Contraseña = txtContraseña.Text.Trim(),
+                    Fecha_registro= fechaFormateada,
+
                 };
 
                 // Validar que todos los campos estén llenos
@@ -39,7 +43,19 @@ namespace OLIMPO
                 }
 
                 // Guardar los datos utilizando el controlador
-                controlador.GuardarDatos(modelo);
+               int idu = controlador.GuardarDatos(modelo);
+                ControladorFactura cf = new ControladorFactura();
+               
+                ModeloFactura modeloFactura = new ModeloFactura
+                {
+                    Idu =idu.ToString(),
+                    Cliente= modelo.Nombre,
+                    FechaEmision =fechaFormateada,
+                    Concepto="MATRICULA",
+                    Total=100
+
+            };
+                cf.GuardarDatos(modeloFactura);
 
                 // Mostrar un mensaje de éxito
                 MessageBox.Show("Datos del usuario guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

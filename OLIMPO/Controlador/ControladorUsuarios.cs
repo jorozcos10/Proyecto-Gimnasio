@@ -2,14 +2,17 @@
 using System;
 using System.IO;
 using System.Windows.Forms.VisualStyles;
+using OLIMPO.Helpers;
+using System.Collections.Generic;
 
 namespace OLIMPO.Controlador
 {
-    public class ControladorClientes
+    public class ControladorUsuarios
     {
-        private string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "usuarios.csv");
+       // private string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Datos", "usuarios.csv");
+        private string rutaArchivo = FileHelper.GetFilePath("usuarios.csv");
 
-        public ControladorClientes()
+        public ControladorUsuarios()
         {
             Console.WriteLine("se inicializa constructor");
             // Crear el archivo CSV si no existe
@@ -19,12 +22,45 @@ namespace OLIMPO.Controlador
                 using (var sw = new StreamWriter(rutaArchivo, false))
                 {
                     // Escribir la cabecera del archivo CSV (opcional)
-                    sw.WriteLine("Id,Nombre,Correo Electrónico,Cédula,Contraseña");
+                    sw.WriteLine("Id,Nombre,Correo Electrónico,Cédula,Contraseña,Fecha Registro");
                 }
             }
         }
+        public List<ModeloClase> LeerDatos()
+        {
+            List<ModeloClase> lista = new List<ModeloClase>();
 
-        public void GuardarDatos(ModeloClientes usuario)
+            // Verifica si el archivo existe
+            if (File.Exists(rutaArchivo))
+            {
+                using (StreamReader sr = new StreamReader(rutaArchivo)) // Lee el archivo línea por línea
+                {
+                    // Omitir la cabecera
+                    sr.ReadLine(); // Lee y descarta la primera línea
+
+                    string linea;
+                    while ((linea = sr.ReadLine()) != null)  // Lee cada línea del archivo
+                    {
+                        // Separa la línea en partes usando la coma como delimitador
+                        string[] partes = linea.Split(',');
+
+                        // Crea un objeto ModeloClase a partir de las partes
+                        ModeloClase clase = new ModeloClase
+                        {
+                            Id = int.Parse(partes[0]),
+                            Nombre = partes[1],
+                        };
+
+                        // Agrega el objeto a la lista
+                        lista.Add(clase);
+                    }
+                }
+            }
+
+            return lista;  // Devuelve la lista de clases
+        }
+
+        public int GuardarDatos(ModeloUsuarios usuario)
         {
             try
             {
@@ -38,7 +74,7 @@ namespace OLIMPO.Controlador
                 prev_id++;
                 usuario.id = prev_id;
                 // Formato de la línea
-                string linea = $"{usuario.id},{usuario.Nombre},{usuario.CorreoElectronico},{usuario.Cedula},{usuario.Contraseña}";
+                string linea = $"{usuario.id},{usuario.Nombre},{usuario.CorreoElectronico},{usuario.Cedula},{usuario.Contraseña},{usuario.Fecha_registro}";
 
                 // Agregar la línea al archivo CSV
                 using (StreamWriter writer = new StreamWriter(rutaArchivo, true))
@@ -50,9 +86,10 @@ namespace OLIMPO.Controlador
             {
                 throw new Exception("Error al guardar los datos del usuario: " + ex.Message);
             }
+            return usuario.id;
         }
 
-        private bool UsuarioYaExiste(ModeloClientes usuario)
+        private bool UsuarioYaExiste(ModeloUsuarios usuario)
         {
            // try
             //{
