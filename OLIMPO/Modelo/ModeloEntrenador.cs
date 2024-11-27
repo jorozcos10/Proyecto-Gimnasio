@@ -17,13 +17,13 @@ namespace OLIMPO.Modelo
 
         // Método privado para obtener la ruta del archivo 'entrenadores.csv'
         private string ObtenerRutaArchivo()
-        {
-            string archivo = FileHelper.GetFilePath("entrenadores.csv");
+        {   string archivo = FileHelper.GetFilePath("entrenadores.csv");
             return archivo;
+        
         }
 
-            // Método para crear el archivo 'entrenadores.csv' si no existe
-            public void CrearArchivoSiNoExiste()
+        // Método para crear el archivo 'entrenadores.csv' si no existe
+        public void CrearArchivoSiNoExiste()
         {
             try
             {
@@ -59,12 +59,13 @@ namespace OLIMPO.Modelo
                     using (var reader = new StreamReader(rutaArchivo))
                     {
                         string line;
+                        
                         while ((line = reader.ReadLine()) != null)
                         {
                             var campos = line.Split(',');
                             string correoCSV = campos[2].Trim();
                             string contraseñaCSV = campos[4].Trim();
-                            Console.WriteLine(line);
+
                             // Verifica si las credenciales coinciden
                             if (CorreoElectronico == correoCSV && Contraseña == contraseñaCSV)
                                 return campos[0];

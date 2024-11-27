@@ -70,7 +70,7 @@ namespace OLIMPO.Controlador
                 {
                     throw new Exception("El usuario con este correo o cédula ya está registrado.");
                 }
-                int prev_id = 0;// getLastId();
+                int prev_id =  getLastId();
                 prev_id++;
                 usuario.id = prev_id;
                 // Formato de la línea

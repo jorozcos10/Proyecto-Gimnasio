@@ -1,4 +1,34 @@
-Id,Nombre,Correo Electrónico,Cédula,Contraseña,Fecha registro
-1,yesenia quispe maribel,yesenia@gmail.com,970312058,123456,2024-10-25
-1,1,1,1,1,2024-11-26
-1,x,x,x,x,2024-11-26
+Id,Nombre,Correo Electrónico,Cédula,Contraseña,Fecha Registro
+1,jesus,jesus@gmail.com,76346498,123456,2024-10-28
+2,eliza,eli@gmail.com,65464,123456,2024-11-26
+3,Juan,juan.perez@example.com,1234567890,pass1234,2024-11-27
+4,Ana,ana.gomez@example.com,2345678901,pass5678,2024-11-27
+5,Carlos,carlos.martinez@example.com,3456789012,pass91011,2024-11-27
+6,María,maria.rodriguez@example.com,4567890123,pass121314,2024-11-27
+7,Luis,luis.sanchez@example.com,5678901234,pass151617,2024-11-27
+8,Sofia,sofia.lopez@example.com,6789012345,pass181920,2024-11-27
+9,Pedro,pedro.fernandez@example.com,7890123456,pass212223,2024-11-27
+10,Laura,laura.martinez@example.com,8901234567,pass242526,2024-11-27
+11,David,david.garcia@example.com,9012345678,pass272829,2024-11-27
+12,Isabel,isabel.hernandez@example.com,1234567891,pass303132,2024-11-27
+13,Felipe Ramírez,felipe.ramirez@example.com,2345678902,pass333435,2024-11-27
+14,Paula Díaz,paula.diaz@example.com,3456789013,pass363738,2024-11-27
+15,Javier Castro,javier.castro@example.com,4567890124,pass394041,2024-11-27
+16,Elena Ruiz,elena.ruiz@example.com,5678901235,pass424344,2024-11-27
+17,Luisina Vázquez,luisina.vazquez@example.com,6789012346,pass454647,2024-11-27
+18,Marta Soto,marta.soto@example.com,7890123457,pass484950,2024-11-27
+19,José Torres,jose.torres@example.com,8901234568,pass515253,2024-11-27
+20,Carmen Moreno,carmen.moreno@example.com,9012345679,pass545556,2024-11-27
+21,Tony Stark,tonystark@example.com,7057548,stark123,2024-11-27
+22,Victor Pérez,victor.perez@example.com,1234567892,pass575859,2024-11-27
+23,Mercedes Gómez,mercedes.gomez@example.com,2345678903,pass606162,2024-11-27
+24,Antonio Sánchez,antonio.sanchez@example.com,3456789014,pass606162,2024-11-27
+25,Beatriz Martínez,beatriz.martinez@example.com,4567890125,pass666768,2024-11-27
+26,Pablo García,pablo.garcia@example.com,5678901236,pass697071,2024-11-27
+27,Raquel Rodríguez,raquel.rodriguez@example.com,6789012347,pass727374,2024-11-27
+28,Luis Martínez,luis.martinez@example.com,7890123458,pass757677,2024-11-27
+29,Clara López,clara.lopez@example.com,8901234569,pass787980,2024-11-27
+30,Héctor Díaz,hector.diaz@example.com,9012345680,pass818283,2024-11-27
+31,Patricia Hernández,patricia.hernandez@example.com,1234567893,pass848586,2024-11-27
+32,Enrique Ramírez,enrique.ramirez@example.com,2345678904,pass878889,2024-11-27
+33,Alicia Soto,alicia.soto@example.com,3456789015,pass909192,2024-11-27

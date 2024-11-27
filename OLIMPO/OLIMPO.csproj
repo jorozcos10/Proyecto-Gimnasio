@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,8 +85,7 @@
       <DependentUpon>frmRegistrarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Modelo\Equipos.cs" />
-    <Compile Include="Modelo\ModeloClientes.cs" />
+    <Compile Include="Modelo\MatriculaPorMes.cs" />
     <Compile Include="Modelo\ModeloEquipos.cs" />
     <Compile Include="Modelo\ModeloClase.cs" />
     <Compile Include="Modelo\ModeloFactura.cs" />

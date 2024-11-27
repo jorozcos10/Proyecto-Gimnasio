@@ -52,7 +52,8 @@ namespace OLIMPO
                     Cliente= modelo.Nombre,
                     FechaEmision =fechaFormateada,
                     Concepto="MATRICULA",
-                    Total=100
+                    Total=100,
+                    Tipo="1"
 
             };
                 cf.GuardarDatos(modeloFactura);

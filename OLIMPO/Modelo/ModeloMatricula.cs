@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OLIMPO.Modelo
 {
-    internal class ModeloMatricula
+    public class ModeloMatricula
     {
         public int Id { get; set; } // Identificador único de la matrícula
         public int ClienteId { get; set; } // Identificador del cliente asociado

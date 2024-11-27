@@ -13,7 +13,9 @@ namespace OLIMPO.Modelo
         public string Idu { get; set; } // Nombre del cliente
 
         public string Cliente { get; set; } // Nombre del cliente
+        public string Tipo { get; set; } //1 ingreso 2 egreso
         public string FechaEmision { get; set; } // Fecha de emisión de la factura
+        public DateTime FechaEm { get; set; }
 
         public string Concepto { get; set; } // Nombre del cliente
 

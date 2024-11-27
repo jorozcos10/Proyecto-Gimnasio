@@ -43,7 +43,7 @@ namespace OLIMPO
                 modeloUsuarios.CorreoElectronico = txtCorreoElectronico.Text;
                 modeloUsuarios.Contraseña = txtContraseña.Text;
                 String[] campos = modeloUsuarios.IniciarSesion();
-                if (campos[0]!="")
+                if (campos!=null && campos[0]!="")
                 {
                     frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario(campos[0], campos[1], campos[5]);
                     fPrincipalUsuario.ShowDialog();
@@ -60,6 +60,7 @@ namespace OLIMPO
                 string idu = modeloEntrenador.IniciarSesion();
                 if (idu!="")
                 {
+                    Console.WriteLine("idu:" + idu);
                     frmPrincipalEntrenador fPrincipalEntrenador = new frmPrincipalEntrenador(idu);
                     fPrincipalEntrenador.ShowDialog();
                 }

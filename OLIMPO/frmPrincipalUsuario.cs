@@ -72,6 +72,7 @@ namespace OLIMPO
             listarReserva();
             cr = new ControladorReserva();
             this.nombre = nombre;
+            listarFacturas();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,10 +98,10 @@ namespace OLIMPO
                 Ide = entrenadorSeleccionado.Idu,
                 Entrenador = entrenadorSeleccionado.Nombre
             };
-           
+            
             cr.GuardarDatos(mr);
             listarReserva();
-
+          
 
         }
         public void listarReserva() {
@@ -121,6 +122,28 @@ namespace OLIMPO
 
             // Asigna el DataTable al DataGridView
             dataGridView1.DataSource = dt;
+        }
+        public void listarFacturas()
+        {
+            ControladorFactura cr = new ControladorFactura();
+            // Crear un DataTable
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(int));
+            dt.Columns.Add("Fecha", typeof(string));
+            dt.Columns.Add("Concepto", typeof(string));
+            dt.Columns.Add("Total", typeof(string));
+
+
+            List<ModeloFactura> lmr = cr.getByIdu(this.idu);
+            Console.WriteLine("count:"+lmr.Count);
+            for (int i = 0; i < lmr.Count; i++)
+            {
+                ModeloFactura modelo = lmr[i];
+                dt.Rows.Add(modelo.Id, modelo.FechaEmision,modelo.Concepto,modelo.Total);
+            }
+
+            // Asigna el DataTable al DataGridView
+            dataGridView2.DataSource = dt;
         }
 
         private void frmPrincipalUsuario_Load(object sender, EventArgs e)
@@ -163,6 +186,16 @@ namespace OLIMPO
             cmbEntrenador.DataSource = listaEntrenadores;
             cmbEntrenador.DisplayMember = "Nombre"; // Propiedad que se mostrará
             cmbEntrenador.ValueMember = "Id";
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
