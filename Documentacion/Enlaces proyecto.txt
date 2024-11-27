@@ -1,0 +1,4 @@
+Link jira: https://armando149.atlassian.net/jira/software/projects/GO/boards/2
+
+link GitHub:
+https://github.com/jorozcos10/Proyecto-Gimnasio
