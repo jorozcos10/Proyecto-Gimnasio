@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,13 +18,15 @@ namespace OLIMPO
     {
         string idu = "";
         string nombre= "";
+        string cedula = "";
         ControladorReserva cr;
-        public frmPrincipalUsuario(String idu, string nombre,string fechav)
+        public frmPrincipalUsuario(String idu, string nombre,string fechav,string cedula)
         {
             //  tabControl.TabPages["tabPage1"].Text = "Nueva Reserva";
             DateTime fecha;
             // Fecha actual
             DateTime fechaActual = DateTime.Now;
+            this.cedula = cedula;
             if (DateTime.TryParse(fechav, out fecha))
             {
                 // Obtenemos la fecha de vencimiento (1 mes después de la fecha de registro)
@@ -73,6 +76,7 @@ namespace OLIMPO
             cr = new ControladorReserva();
             this.nombre = nombre;
             listarFacturas();
+            cargarMembresia();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -104,6 +108,7 @@ namespace OLIMPO
           
 
         }
+
         public void listarReserva() {
             ControladorReserva cr = new ControladorReserva();
             // Crear un DataTable
@@ -196,6 +201,47 @@ namespace OLIMPO
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ControladorMembresia cm = new ControladorMembresia();
+            ModeloMembresia me = new ModeloMembresia
+            {
+                ClienteId = int.Parse(idu),
+                Cliente = nombre,
+                Fi = $"{DateTime.Now:yyyy-MM-dd}",
+                Ff = $"{DateTime.Now.AddDays(30):yyyy-MM-dd}",
+                Costo = 150
+
+
+            };
+            cm.GuardarDatos(me);
+
+            ControladorFactura cf = new ControladorFactura();
+
+            ModeloFactura modeloFactura = new ModeloFactura
+            {
+                Idu = idu.ToString(),
+                Cliente = nombre,
+                FechaEmision = $"{DateTime.Now:yyyy-MM-dd}",
+                Concepto = "MEMBRESIA",
+                Total = 150,
+                Tipo = "1"
+
+            };
+            cf.GuardarDatos(modeloFactura);
+            MessageBox.Show("Membresía comprada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listarFacturas();
+        }
+        public void cargarMembresia()
+        {
+            lblCedula.Text = $"Cédula: {cedula}";
+            lblFechaInicio.Text = $"Fecha de Inicio: {DateTime.Now:yyyy-MM-dd}";
+            lblFechaFinal.Text = $"Fecha de Expiración: {DateTime.Now.AddDays(30):yyyy-MM-dd}";
+
+            // Mostrar el costo fijo desde la clase CostoMembresia
+            lblCosto.Text = $"Costo: {150:C2}"; // Formato de moneda
         }
     }
 }

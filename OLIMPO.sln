@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OLIMPO", "OLIMPO\OLIMPO.csproj", "{CDB0910E-C21D-409D-B246-9551CD57285A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OlimpoBlazor", "OlimpoBlazor\OlimpoBlazor.csproj", "{156CBD5E-664C-4C7A-A806-DEE65350ECBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CDB0910E-C21D-409D-B246-9551CD57285A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDB0910E-C21D-409D-B246-9551CD57285A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB0910E-C21D-409D-B246-9551CD57285A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{156CBD5E-664C-4C7A-A806-DEE65350ECBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{156CBD5E-664C-4C7A-A806-DEE65350ECBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{156CBD5E-664C-4C7A-A806-DEE65350ECBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{156CBD5E-664C-4C7A-A806-DEE65350ECBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

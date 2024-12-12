@@ -51,6 +51,7 @@
     <Compile Include="Controlador\ControladorEntrenador.cs" />
     <Compile Include="Controlador\ControladorEquipos.cs" />
     <Compile Include="Controlador\ControladorFactura.cs" />
+    <Compile Include="Controlador\ControladorMembresia.cs" />
     <Compile Include="Controlador\ControladorReserva.cs" />
     <Compile Include="Controlador\ControladorUsuarios.cs" />
     <Compile Include="Controlador\ControladorHorario.cs" />
@@ -122,14 +123,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Datos\clases.csv" />
-    <None Include="Datos\disponibilidad_entrenador.csv" />
-    <None Include="Datos\entrenadores.csv" />
-    <None Include="Datos\equipos.csv" />
-    <None Include="Datos\facturas.csv" />
-    <None Include="Datos\horario.csv" />
-    <None Include="Datos\reserva.csv" />
-    <None Include="Datos\usuarios.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

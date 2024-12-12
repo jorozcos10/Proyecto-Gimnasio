@@ -45,7 +45,7 @@ namespace OLIMPO
                 String[] campos = modeloUsuarios.IniciarSesion();
                 if (campos!=null && campos[0]!="")
                 {
-                    frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario(campos[0], campos[1], campos[5]);
+                    frmPrincipalUsuario fPrincipalUsuario = new frmPrincipalUsuario(campos[0], campos[1], campos[5], campos[3]);
                     fPrincipalUsuario.ShowDialog();
                 }
                 else

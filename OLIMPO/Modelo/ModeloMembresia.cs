@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace OLIMPO.Modelo
 {
-    internal class ModeloMembresia
+    public class ModeloMembresia
     {
+        public int Id { get; set; }
         public int ClienteId { get; set; }
+        public string Cliente { get; set; }
+        public string Fi { get; set; }
+        public string Ff { get; set; }
+
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public decimal Costo { get; set; }
